@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Culto ao Vivo – IADNME</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .player-section {
+      background: linear-gradient(135deg, #001F3F 0%, #003366 100%);
+      padding: 4rem 0;
+      color: #fff;
+    }
+    .player-embed {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      background: #000;
+      position: relative;
+    }
+    .player-embed iframe { width: 100%; height: 100%; border: none; }
+    .player-embed .placeholder-video {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      background: rgba(0,0,0,.6);
+      color: #fff;
+    }
+    .chat-area {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 16px;
+      height: 100%;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+    }
+    .chat-header {
+      background: rgba(255,107,53,.2);
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      padding: 1rem 1.2rem;
+      border-radius: 16px 16px 0 0;
+      font-weight: 700;
+    }
+    .chat-msgs {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      max-height: 300px;
+    }
+    .chat-msg { background: rgba(255,255,255,.07); border-radius: 8px; padding: .5rem .75rem; font-size: .85rem; }
+    .chat-msg .user { color: #FFD700; font-weight: 700; font-size: .78rem; }
+    .chat-input { padding: 1rem; border-top: 1px solid rgba(255,255,255,.1); display: flex; gap: .5rem; }
+    .chat-input input {
+      flex: 1; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+      color: #fff; border-radius: 8px; padding: .5rem .75rem; font-size: .88rem;
+    }
+    .chat-input input::placeholder { color: rgba(255,255,255,.4); }
+    .chat-input button { background: #FF6B35; border: none; color: #fff; border-radius: 8px; padding: .5rem 1rem; cursor: pointer; }
+    .pregacao-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 12px;
+      padding: 1.2rem;
+      transition: background .3s;
+      cursor: pointer;
+    }
+    .pregacao-card:hover { background: rgba(255,255,255,.1); }
+    .pregacao-thumb { width: 90px; height: 60px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div id="topbar">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div class="d-flex flex-wrap gap-3">
+        <span class="topbar-item"><i class="bi bi-geo-alt-fill"></i> Nova Metrópole – SP</span>
+        <span class="topbar-item"><i class="bi bi-telephone-fill"></i> (11) 9 9999-0000</span>
+        <span class="topbar-item"><i class="bi bi-envelope-fill"></i> contato@iadnme.org.br</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="culto-ao-vivo.html" class="topbar-item text-warning fw-bold"><i class="bi bi-broadcast"></i> Ao Vivo</a>
+        <div class="d-flex gap-2">
+          <a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a><a href="#"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="mainNav" class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="img/logo.png" onerror="this.onerror=null;this.src='https://placehold.co/60x60/001F3F/FFD700?text=AD'" alt="Logo IADNME" />
+      <div class="brand-text d-none d-sm-block"><div class="brand-name">Assembleia de Deus</div><div class="brand-sub">Nova Metrópole</div></div>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="credo.html">Nosso Credo</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Liderança</a>
+          <ul class="dropdown-menu border-0 shadow">
+            <li><a class="dropdown-item" href="pastor.html">Pastor Presidente</a></li>
+            <li><a class="dropdown-item" href="pastores.html">Pastores</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="noticias.html">Notícias</a></li>
+        <li class="nav-item"><a class="nav-link" href="eventos.html">Eventos</a></li>
+        <li class="nav-item"><a class="nav-link nav-ao-vivo active" href="culto-ao-vivo.html"><i class="bi bi-broadcast me-1"></i>Ao Vivo</a></li>
+        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PLAYER SECTION -->
+<div class="player-section">
+  <div class="container">
+    <div class="d-flex align-items-center gap-3 mb-4">
+      <div class="live-badge">
+        <span class="dot"></span> Ao Vivo – Domingo 19h
+      </div>
+      <h2 class="fw-bold text-white mb-0">Culto de <span class="text-warning">Celebração</span></h2>
+    </div>
+
+    <div class="row g-4">
+      <!-- Player -->
+      <div class="col-lg-8">
+        <div class="player-embed">
+          <!-- Proteção de privacidade: vídeo do youtube não auto-carrega sem interação -->
+          <div class="placeholder-video">
+            <div style="width:80px;height:80px;background:#FF6B35;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="loadVideo()">
+              <i class="bi bi-play-fill" style="font-size:2.5rem;margin-left:5px;"></i>
+            </div>
+            <h5>Culto ao Vivo – IADNME</h5>
+            <p style="opacity:.7;font-size:.9rem;">Domingo, 20 de Abril de 2025 – 19h00</p>
+            <p style="opacity:.5;font-size:.82rem;">Clique para iniciar a transmissão</p>
+          </div>
+          <iframe id="ytPlayer" style="display:none;" title="Culto ao Vivo IADNME" allowfullscreen></iframe>
+        </div>
+
+        <!-- Controles extras -->
+        <div class="d-flex flex-wrap gap-3 mt-3 align-items-center">
+          <button class="btn btn-sm d-flex align-items-center gap-2" style="background:rgba(255,255,255,.1);color:#fff;border-radius:8px;border:none;">
+            <i class="bi bi-hand-thumbs-up"></i> Amei
+          </button>
+          <button class="btn btn-sm d-flex align-items-center gap-2" style="background:rgba(255,255,255,.1);color:#fff;border-radius:8px;border:none;">
+            <i class="bi bi-share"></i> Compartilhar
+          </button>
+          <button class="btn btn-sm d-flex align-items-center gap-2" style="background:rgba(255,255,255,.1);color:#fff;border-radius:8px;border:none;">
+            <i class="bi bi-heart"></i> Orar Juntos
+          </button>
+          <span style="color:rgba(255,255,255,.5);font-size:.82rem;margin-left:auto;">
+            <i class="bi bi-eye"></i> 1.247 assistindo
+          </span>
+        </div>
+      </div>
+
+      <!-- Chat -->
+      <div class="col-lg-4">
+        <div class="chat-area">
+          <div class="chat-header d-flex align-items-center gap-2">
+            <i class="bi bi-chat-dots-fill text-warning"></i>
+            Chat ao vivo
+            <span class="ms-auto badge" style="background:rgba(255,107,53,.4);font-size:.72rem;">247 online</span>
+          </div>
+          <div class="chat-msgs" id="chatMsgs">
+            <div class="chat-msg"><span class="user">Maria S.:</span> Glória a Deus! 🙌</div>
+            <div class="chat-msg"><span class="user">João P.:</span> Que culto abençoado!</div>
+            <div class="chat-msg"><span class="user">Ana C.:</span> Assistindo de Campinas 🙏</div>
+            <div class="chat-msg"><span class="user">Carlos M.:</span> Amém! Deus é fiel!</div>
+            <div class="chat-msg"><span class="user">Rosa F.:</span> Que louvor maravilhoso!</div>
+            <div class="chat-msg"><span class="user">Pedro L.:</span> Assistindo de BH! Abençoado!</div>
+            <div class="chat-msg"><span class="user">Lucia A.:</span> Graças a Deus por este culto!</div>
+          </div>
+          <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Digite uma mensagem..." />
+            <button onclick="sendMsg()"><i class="bi bi-send-fill"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Horários -->
+    <div class="row mt-5 g-3">
+      <div class="col-12">
+        <h4 class="fw-bold text-white mb-3">Horários de <span class="text-warning">Culto</span></h4>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-2">
+        <div class="text-center p-3 rounded-3" style="background:rgba(255,255,255,.08);">
+          <div class="fw-bold" style="color:#FFD700;">Domingo</div>
+          <div style="font-size:.85rem;opacity:.8;">09h – EBD</div>
+          <div style="font-size:.85rem;opacity:.8;">19h – Culto</div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-2">
+        <div class="text-center p-3 rounded-3" style="background:rgba(255,255,255,.08);">
+          <div class="fw-bold" style="color:#FFD700;">Terça</div>
+          <div style="font-size:.85rem;opacity:.8;">19h30 – Família</div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-2">
+        <div class="text-center p-3 rounded-3" style="background:rgba(255,255,255,.08);">
+          <div class="fw-bold" style="color:#FFD700;">Quinta</div>
+          <div style="font-size:.85rem;opacity:.8;">19h30 – Estudo</div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-2">
+        <div class="text-center p-3 rounded-3" style="background:rgba(255,255,255,.08);">
+          <div class="fw-bold" style="color:#FFD700;">Sexta</div>
+          <div style="font-size:.85rem;opacity:.8;">19h30 – Santa Ceia</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PREGAÇÕES ANTERIORES -->
+<section class="py-5" style="background:#001F3F;">
+  <div class="container">
+    <h3 class="fw-bold text-white mb-4">Pregações <span class="text-warning">Anteriores</span></h3>
+    <div class="row g-3">
+      <div class="col-12">
+        <div class="pregacao-card d-flex align-items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1438232992991-995b671a1d96?w=200&q=80" class="pregacao-thumb" alt="Pregação" />
+          <div class="flex-grow-1">
+            <h6 class="text-white fw-bold mb-1">Poder em Adoração – Jo 4:23</h6>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.6);">Pastor João • Dom, 13 abr 2025 • 45 min</div>
+          </div>
+          <a href="#" class="btn-laranja" style="font-size:.8rem;padding:.4rem .8rem;flex-shrink:0;"><i class="bi bi-play-fill"></i> Assistir</a>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="pregacao-card d-flex align-items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=200&q=80" class="pregacao-thumb" alt="Pregação" />
+          <div class="flex-grow-1">
+            <h6 class="text-white fw-bold mb-1">A Fé que Move Montanhas – Mt 17:20</h6>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.6);">Pr. Carlos Eduardo • Qui, 10 abr 2025 • 38 min</div>
+          </div>
+          <a href="#" class="btn-laranja" style="font-size:.8rem;padding:.4rem .8rem;flex-shrink:0;"><i class="bi bi-play-fill"></i> Assistir</a>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="pregacao-card d-flex align-items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=200&q=80" class="pregacao-thumb" alt="Pregação" />
+          <div class="flex-grow-1">
+            <h6 class="text-white fw-bold mb-1">Renovação pelo Espírito – Ef 5:18</h6>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.6);">Pastor João • Dom, 06 abr 2025 • 52 min</div>
+          </div>
+          <a href="#" class="btn-laranja" style="font-size:.8rem;padding:.4rem .8rem;flex-shrink:0;"><i class="bi bi-play-fill"></i> Assistir</a>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="pregacao-card d-flex align-items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=200&q=80" class="pregacao-thumb" alt="Pregação" />
+          <div class="flex-grow-1">
+            <h6 class="text-white fw-bold mb-1">Vida Abundante em Cristo – Jo 10:10</h6>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.6);">Pr. Marcos Antônio • Ter, 01 abr 2025 • 41 min</div>
+          </div>
+          <a href="#" class="btn-laranja" style="font-size:.8rem;padding:.4rem .8rem;flex-shrink:0;"><i class="bi bi-play-fill"></i> Assistir</a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <a href="#" class="btn-outline-branco px-4">Ver todas as pregações</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta-jesus">
+  <div class="container">
+    <h2>Eu quero entregar minha vida a Jesus Cristo!</h2>
+    <p>Dê esse passo agora. Nossa equipe está pronta para orar e te acompanhar.</p>
+    <button class="btn-outline-branco px-4 py-2" data-bs-toggle="modal" data-bs-target="#modalJesus">
+      <i class="bi bi-heart me-2"></i> Quero aceitar Jesus
+    </button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-brand">
+          <img src="img/logo.png" onerror="this.onerror=null;this.src='https://placehold.co/70x70/FFD700/001F3F?text=AD'" alt="Logo IADNME" />
+          <p>Igreja Assembleia de Deus Nova Metrópole – comprometida com a pregação do Evangelho.</p>
+          <div class="social-icons mt-3">
+            <a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a><a href="#"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 col-6">
+        <h6>Institucional</h6>
+        <ul>
+          <li><a href="index.html">Home</a></li><li><a href="credo.html">Nosso Credo</a></li>
+          <li><a href="pastor.html">Pastor Presidente</a></li><li><a href="pastores.html">Pastores</a></li>
+          <li><a href="noticias.html">Notícias</a></li><li><a href="eventos.html">Eventos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 col-6">
+        <h6>Ministérios</h6>
+        <ul>
+          <li><a href="#">União de Jovens</a></li><li><a href="#">Círculo de Oração</a></li>
+          <li><a href="#">Dep. Masculino</a></li><li><a href="#">Escola Bíblica Infantil</a></li>
+          <li><a href="#">Ministério de Louvor</a></li><li><a href="#">Dep. de Missões</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6>Contato</h6>
+        <ul>
+          <li><a href="#"><i class="bi bi-geo-alt me-1"></i> Nova Metrópole – SP</a></li>
+          <li><a href="#"><i class="bi bi-telephone me-1"></i> (11) 9 9999-0000</a></li>
+          <li><a href="#"><i class="bi bi-envelope me-1"></i> contato@iadnme.org.br</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container">© 2025 IADNME – Igreja Assembleia de Deus Nova Metrópole. | <a href="#">Política de Privacidade</a></div></div>
+</footer>
+
+<div class="modal fade" id="modalJesus" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow">
+      <div class="modal-header"><h5 class="modal-title fw-bold"><i class="bi bi-heart-fill me-2"></i> Quero Aceitar Jesus!</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body p-4">
+        <form id="formJesus">
+          <div class="mb-3"><label class="form-label fw-semibold">Nome *</label><input type="text" class="form-control" id="jesusNome" required /></div>
+          <div class="mb-3"><label class="form-label fw-semibold">WhatsApp</label><input type="tel" class="form-control" id="jesusPhone" /></div>
+          <div class="mb-4"><label class="form-label fw-semibold">E-mail</label><input type="email" class="form-control" id="jesusEmail" /></div>
+          <button type="submit" class="btn-laranja w-100 py-2"><i class="bi bi-heart me-2"></i> Quero Aceitar Jesus!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button id="scrollTop" title="Voltar ao topo"><i class="bi bi-chevron-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+  function loadVideo() {
+    const placeholder = document.querySelector('.placeholder-video');
+    const iframe = document.getElementById('ytPlayer');
+    placeholder.style.display = 'none';
+    iframe.style.display = 'block';
+    // Em produção, substituir pelo ID real do canal/vídeo do YouTube
+    iframe.src = 'https://www.youtube.com/embed/live_stream?channel=UCxxxxxx&autoplay=1';
+  }
+
+  const chatMsgs = [
+    ['Maria J.', 'Glória a Deus! 🙌'],
+    ['Pedro S.', 'Amém! Que bênção!'],
+    ['Ana L.', 'Assistindo do Rio 🙏'],
+    ['Carlos F.', 'Que culto!'],
+    ['Rosa M.', 'Deus é fiel sempre!'],
+  ];
+  let msgIdx = 0;
+
+  function sendMsg() {
+    const input = document.getElementById('chatInput');
+    const msg = input.value.trim();
+    if (!msg) return;
+    addMsg('Você', msg);
+    input.value = '';
+    setTimeout(() => {
+      const [user, text] = chatMsgs[msgIdx % chatMsgs.length];
+      addMsg(user, text);
+      msgIdx++;
+    }, 1200);
+  }
+
+  function addMsg(user, text) {
+    const div = document.createElement('div');
+    div.className = 'chat-msg';
+    div.innerHTML = `<span class="user">${user}:</span> ${text}`;
+    const container = document.getElementById('chatMsgs');
+    container.appendChild(div);
+    container.scrollTop = container.scrollHeight;
+  }
+
+  document.getElementById('chatInput').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendMsg();
+  });
+</script>
+</body>
+</html>

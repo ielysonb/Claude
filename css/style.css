@@ -1,0 +1,758 @@
+/* =============================================
+   IADNME - Igreja Assembleia de Deus Nova Metrópole
+   Stylesheet Principal
+   ============================================= */
+
+/* --- Variáveis de Cor --- */
+:root {
+  --azul-escuro: #001F3F;
+  --dourado: #FFD700;
+  --laranja: #FF6B35;
+  --branco: #FFFFFF;
+  --cinza-claro: #F5F5F5;
+  --cinza-medio: #cccccc;
+  --texto-escuro: #222222;
+  --sombra: rgba(0,0,0,0.15);
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--texto-escuro);
+  background: var(--branco);
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+a:hover { color: var(--laranja); }
+img { max-width: 100%; }
+
+/* --- Utilitários --- */
+.text-dourado { color: var(--dourado); }
+.text-laranja { color: var(--laranja); }
+.text-azul    { color: var(--azul-escuro); }
+.bg-azul      { background-color: var(--azul-escuro); }
+.bg-cinza     { background-color: var(--cinza-claro); }
+.bg-dourado   { background-color: var(--dourado); }
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--azul-escuro);
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+.section-title span { color: var(--laranja); }
+.section-divider {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--laranja), var(--dourado));
+  border-radius: 2px;
+  margin: 0.5rem auto 1.5rem;
+}
+
+/* --- Botões --- */
+.btn-laranja {
+  background: var(--laranja);
+  color: var(--branco);
+  border: none;
+  padding: 0.65rem 1.8rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.3s, transform 0.2s;
+  display: inline-block;
+}
+.btn-laranja:hover { background: #e55a26; color: var(--branco); transform: translateY(-2px); }
+
+.btn-outline-azul {
+  background: transparent;
+  color: var(--azul-escuro);
+  border: 2px solid var(--azul-escuro);
+  padding: 0.6rem 1.6rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  display: inline-block;
+}
+.btn-outline-azul:hover { background: var(--azul-escuro); color: var(--branco); }
+
+.btn-outline-branco {
+  background: transparent;
+  color: var(--branco);
+  border: 2px solid var(--branco);
+  padding: 0.6rem 1.6rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  display: inline-block;
+}
+.btn-outline-branco:hover { background: var(--branco); color: var(--azul-escuro); }
+
+/* =============================================
+   TOP BAR
+   ============================================= */
+#topbar {
+  background: var(--azul-escuro);
+  color: var(--branco);
+  font-size: 0.82rem;
+  padding: 0.4rem 0;
+  border-bottom: 2px solid var(--dourado);
+}
+#topbar a { color: var(--cinza-medio); transition: color 0.2s; }
+#topbar a:hover { color: var(--dourado); }
+#topbar .topbar-item { display: flex; align-items: center; gap: 0.35rem; }
+#topbar i { color: var(--dourado); font-size: 0.9rem; }
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+#mainNav {
+  background: var(--branco);
+  box-shadow: 0 2px 12px var(--sombra);
+  padding: 0.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: box-shadow 0.3s;
+}
+#mainNav.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+
+.navbar-brand img { height: 60px; }
+.navbar-brand .brand-text { line-height: 1.1; }
+.navbar-brand .brand-name { font-size: 0.75rem; font-weight: 700; color: var(--azul-escuro); }
+.navbar-brand .brand-sub  { font-size: 0.65rem; color: var(--laranja); text-transform: uppercase; letter-spacing: 0.5px; }
+
+.navbar-nav .nav-link {
+  color: var(--azul-escuro) !important;
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 0.5rem 0.75rem !important;
+  border-radius: 4px;
+  transition: color 0.2s, background 0.2s;
+  position: relative;
+}
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%; right: 50%;
+  height: 2px;
+  background: var(--laranja);
+  transition: left 0.3s, right 0.3s;
+}
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after { left: 0.5rem; right: 0.5rem; }
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active { color: var(--laranja) !important; }
+
+.nav-ao-vivo {
+  background: var(--laranja);
+  color: var(--branco) !important;
+  border-radius: 20px !important;
+  padding: 0.4rem 1rem !important;
+  animation: pulse-ao-vivo 2s infinite;
+}
+.nav-ao-vivo::after { display: none !important; }
+.nav-ao-vivo:hover { background: #e55a26 !important; color: var(--branco) !important; }
+
+@keyframes pulse-ao-vivo {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,107,53,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(255,107,53,0); }
+}
+
+/* =============================================
+   HERO CAROUSEL
+   ============================================= */
+#heroCarousel { margin-top: 0; }
+
+.hero-slide {
+  position: relative;
+  height: 520px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+.hero-slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,31,63,0.85) 0%, rgba(0,31,63,0.4) 60%, transparent 100%);
+}
+.hero-slide-1 { background-image: url('https://images.unsplash.com/photo-1438232992991-995b671a1d96?w=1400&q=80'); }
+.hero-slide-2 { background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1400&q=80'); }
+.hero-slide-3 { background-image: url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=1400&q=80'); }
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--branco);
+  max-width: 600px;
+}
+.hero-content .tag {
+  display: inline-block;
+  background: var(--laranja);
+  color: var(--branco);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.25rem 0.9rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.hero-content h1 span { color: var(--dourado); }
+.hero-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: var(--laranja);
+  border-radius: 50%;
+  padding: 1rem;
+  background-size: 50%;
+}
+.carousel-indicators [data-bs-target] {
+  background-color: var(--dourado);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* =============================================
+   ACESSO RÁPIDO
+   ============================================= */
+#acesso-rapido {
+  background: var(--azul-escuro);
+  padding: 2rem 0;
+}
+.acesso-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--branco);
+  padding: 1.2rem 1rem;
+  border-radius: 12px;
+  transition: background 0.3s, transform 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.acesso-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); color: var(--dourado); }
+.acesso-card i {
+  font-size: 2.2rem;
+  color: var(--dourado);
+  transition: transform 0.3s;
+}
+.acesso-card:hover i { transform: scale(1.1); }
+.acesso-card span { font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* =============================================
+   VERSÍCULO DESTAQUE
+   ============================================= */
+#versiculo {
+  background: linear-gradient(135deg, var(--laranja) 0%, #e55a26 100%);
+  padding: 2.5rem 0;
+  text-align: center;
+  color: var(--branco);
+}
+#versiculo blockquote {
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 300;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+#versiculo cite { font-size: 0.95rem; font-style: normal; font-weight: 700; opacity: 0.85; }
+
+/* =============================================
+   SOBRE A IGREJA
+   ============================================= */
+#sobre { padding: 5rem 0; }
+.sobre-img {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,31,63,0.15);
+}
+.sobre-img img { width: 100%; height: 420px; object-fit: cover; }
+.sobre-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.stat-item { text-align: center; padding: 1rem; background: var(--cinza-claro); border-radius: 10px; }
+.stat-item .numero { font-size: 2rem; font-weight: 800; color: var(--laranja); }
+.stat-item .label { font-size: 0.78rem; color: #666; font-weight: 600; text-transform: uppercase; }
+
+/* =============================================
+   EVENTOS
+   ============================================= */
+#eventos { padding: 5rem 0; background: var(--cinza-claro); }
+
+.evento-card {
+  background: var(--branco);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px var(--sombra);
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+}
+.evento-card:hover { transform: translateY(-6px); box-shadow: 0 12px 35px rgba(0,0,0,0.15); }
+.evento-card .card-img { position: relative; overflow: hidden; height: 200px; }
+.evento-card .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.evento-card:hover .card-img img { transform: scale(1.05); }
+.evento-card .card-date {
+  position: absolute;
+  top: 12px; left: 12px;
+  background: var(--laranja);
+  color: var(--branco);
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  text-align: center;
+  line-height: 1.1;
+}
+.evento-card .card-date .dia { font-size: 1.4rem; font-weight: 800; }
+.evento-card .card-date .mes { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; }
+.evento-card .card-body { padding: 1.2rem; }
+.evento-card .card-body h5 { font-weight: 700; color: var(--azul-escuro); margin-bottom: 0.5rem; }
+.evento-card .card-body p { font-size: 0.88rem; color: #666; margin-bottom: 1rem; }
+.evento-card .card-meta { font-size: 0.8rem; color: #888; display: flex; align-items: center; gap: 0.4rem; }
+
+/* =============================================
+   CULTO AO VIVO
+   ============================================= */
+#culto-ao-vivo {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--azul-escuro) 0%, #003366 100%);
+  color: var(--branco);
+}
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255,107,53,0.2);
+  border: 1px solid var(--laranja);
+  color: var(--laranja);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.live-badge .dot {
+  width: 8px; height: 8px;
+  background: var(--laranja);
+  border-radius: 50%;
+  animation: blink 1.2s infinite;
+}
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+.horarios-culto { list-style: none; }
+.horarios-culto li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.95rem;
+}
+.horarios-culto li:last-child { border-bottom: none; }
+.horarios-culto li i { color: var(--dourado); width: 18px; }
+.horarios-culto .dia-semana { font-weight: 700; min-width: 110px; }
+.horarios-culto .horario { color: var(--dourado); font-weight: 600; }
+
+.video-placeholder {
+  background: rgba(0,0,0,0.3);
+  border-radius: 14px;
+  aspect-ratio: 16/9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 2px solid rgba(255,255,255,0.1);
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+.video-placeholder:hover { border-color: var(--laranja); }
+.video-placeholder .play-btn {
+  width: 70px; height: 70px;
+  background: var(--laranja);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--branco);
+  transition: transform 0.3s, background 0.3s;
+}
+.video-placeholder:hover .play-btn { transform: scale(1.1); background: #e55a26; }
+.video-placeholder p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+
+/* =============================================
+   MINISTÉRIOS
+   ============================================= */
+#ministerios { padding: 5rem 0; }
+.ministerio-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.ministerio-card:hover {
+  border-color: var(--laranja);
+  box-shadow: 0 8px 30px rgba(255,107,53,0.15);
+  transform: translateY(-4px);
+}
+.ministerio-card .icon {
+  width: 70px; height: 70px;
+  background: linear-gradient(135deg, var(--azul-escuro), #003a70);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.8rem;
+  color: var(--dourado);
+  transition: background 0.3s;
+}
+.ministerio-card:hover .icon { background: linear-gradient(135deg, var(--laranja), #e55a26); }
+.ministerio-card h5 { font-weight: 700; color: var(--azul-escuro); margin-bottom: 0.5rem; }
+.ministerio-card p { font-size: 0.87rem; color: #666; }
+
+/* =============================================
+   PASTOR PRESIDENTE
+   ============================================= */
+#pastor { padding: 5rem 0; background: var(--cinza-claro); }
+.pastor-img-wrap {
+  position: relative;
+  display: inline-block;
+}
+.pastor-img-wrap img {
+  width: 320px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0,31,63,0.2);
+}
+.pastor-img-wrap::before {
+  content: '';
+  position: absolute;
+  top: -10px; left: -10px;
+  right: 10px; bottom: 10px;
+  border: 3px solid var(--dourado);
+  border-radius: 16px;
+  z-index: -1;
+}
+.pastor-quote {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #555;
+  border-left: 4px solid var(--laranja);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  line-height: 1.7;
+}
+
+/* =============================================
+   PASTORES
+   ============================================= */
+#pastores { padding: 5rem 0; }
+.pastor-card {
+  text-align: center;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--branco);
+  box-shadow: 0 4px 20px var(--sombra);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.pastor-card:hover { transform: translateY(-6px); box-shadow: 0 12px 35px rgba(0,0,0,0.15); }
+.pastor-card .foto { position: relative; overflow: hidden; height: 240px; }
+.pastor-card .foto img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.pastor-card:hover .foto img { transform: scale(1.05); }
+.pastor-card .overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,31,63,0.8));
+  padding: 1rem;
+  color: var(--branco);
+}
+.pastor-card .overlay h6 { font-weight: 700; margin: 0; }
+.pastor-card .overlay small { color: var(--dourado); font-size: 0.78rem; }
+.pastor-card .pastor-info { padding: 1rem; }
+.pastor-card .pastor-info p { font-size: 0.85rem; color: #666; margin: 0; }
+
+/* =============================================
+   NOTÍCIAS
+   ============================================= */
+#noticias { padding: 5rem 0; background: var(--cinza-claro); }
+.noticia-card {
+  background: var(--branco);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px var(--sombra);
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+}
+.noticia-card:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(0,0,0,0.15); }
+.noticia-card .card-img { height: 200px; overflow: hidden; }
+.noticia-card .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.noticia-card:hover .card-img img { transform: scale(1.05); }
+.noticia-card .card-body { padding: 1.2rem; }
+.noticia-card .categoria {
+  display: inline-block;
+  background: var(--cinza-claro);
+  color: var(--laranja);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+.noticia-card h5 { font-weight: 700; color: var(--azul-escuro); font-size: 1rem; margin-bottom: 0.5rem; }
+.noticia-card p { font-size: 0.85rem; color: #666; }
+.noticia-card .data { font-size: 0.78rem; color: #999; display: flex; align-items: center; gap: 0.3rem; }
+
+/* =============================================
+   CTA - ENTREGA DE VIDA
+   ============================================= */
+#cta-jesus {
+  background: linear-gradient(135deg, var(--laranja) 0%, #e55a26 100%);
+  padding: 4rem 0;
+  text-align: center;
+  color: var(--branco);
+  position: relative;
+  overflow: hidden;
+}
+#cta-jesus::before {
+  content: '';
+  position: absolute;
+  top: -50px; right: -50px;
+  width: 300px; height: 300px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+}
+#cta-jesus::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -80px;
+  width: 400px; height: 400px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+}
+#cta-jesus h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.75rem; }
+#cta-jesus p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+/* =============================================
+   LOCALIZAÇÃO
+   ============================================= */
+#localizacao { padding: 5rem 0; }
+.mapa-placeholder {
+  background: #e8e8e8;
+  border-radius: 14px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #666;
+  overflow: hidden;
+  position: relative;
+}
+.mapa-placeholder iframe {
+  width: 100%; height: 100%;
+  border: none;
+  border-radius: 14px;
+}
+.endereco-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.endereco-item .icon {
+  width: 44px; height: 44px;
+  background: var(--cinza-claro);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--laranja);
+  font-size: 1.1rem;
+}
+.endereco-item h6 { font-weight: 700; color: var(--azul-escuro); margin-bottom: 0.2rem; }
+.endereco-item p { font-size: 0.9rem; color: #666; margin: 0; }
+
+/* =============================================
+   FOOTER
+   ============================================= */
+#footer {
+  background: var(--azul-escuro);
+  color: rgba(255,255,255,0.8);
+  padding: 4rem 0 0;
+}
+#footer .footer-brand img { height: 70px; margin-bottom: 1rem; }
+#footer .footer-brand p { font-size: 0.88rem; line-height: 1.7; max-width: 280px; }
+#footer h6 {
+  color: var(--dourado);
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+#footer ul { list-style: none; padding: 0; }
+#footer ul li { margin-bottom: 0.4rem; }
+#footer ul li a { font-size: 0.88rem; color: rgba(255,255,255,0.7); transition: color 0.2s; }
+#footer ul li a:hover { color: var(--dourado); padding-left: 4px; }
+#footer .social-icons a {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--branco);
+  font-size: 0.9rem;
+  transition: background 0.3s, color 0.3s;
+  margin-right: 0.4rem;
+}
+#footer .social-icons a:hover { background: var(--laranja); color: var(--branco); }
+.footer-bottom {
+  background: rgba(0,0,0,0.3);
+  margin-top: 3rem;
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+}
+.footer-bottom a { color: var(--dourado); }
+
+/* =============================================
+   PAGE HERO (páginas internas)
+   ============================================= */
+.page-hero {
+  background: linear-gradient(135deg, var(--azul-escuro) 0%, #003366 100%);
+  color: var(--branco);
+  padding: 5rem 0 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1438232992991-995b671a1d96?w=1400&q=80') center/cover no-repeat;
+  opacity: 0.08;
+}
+.page-hero h1 { font-size: 2.5rem; font-weight: 800; position: relative; }
+.page-hero p { font-size: 1.1rem; opacity: 0.85; position: relative; max-width: 600px; margin: 0 auto; }
+.breadcrumb-custom { position: relative; margin-top: 1rem; }
+.breadcrumb-custom a { color: var(--dourado); }
+.breadcrumb-custom span { opacity: 0.6; }
+
+/* =============================================
+   FORMULÁRIO CONTATO
+   ============================================= */
+.contact-form .form-control,
+.contact-form .form-select {
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 0.92rem;
+  transition: border-color 0.3s;
+}
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+  border-color: var(--laranja);
+  box-shadow: 0 0 0 3px rgba(255,107,53,0.1);
+}
+.contact-form label { font-weight: 600; font-size: 0.88rem; color: var(--azul-escuro); margin-bottom: 0.3rem; }
+
+/* =============================================
+   SCROLL TO TOP
+   ============================================= */
+#scrollTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px; height: 44px;
+  background: var(--laranja);
+  color: var(--branco);
+  border: none;
+  border-radius: 50%;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(255,107,53,0.4);
+}
+#scrollTop.visible { opacity: 1; transform: translateY(0); }
+#scrollTop:hover { background: #e55a26; }
+
+/* =============================================
+   MODAL ENTREGA DE VIDA
+   ============================================= */
+#modalJesus .modal-header {
+  background: linear-gradient(135deg, var(--laranja), #e55a26);
+  color: var(--branco);
+  border: none;
+}
+#modalJesus .modal-header .btn-close { filter: invert(1); }
+#modalJesus .form-control:focus { border-color: var(--laranja); box-shadow: 0 0 0 3px rgba(255,107,53,0.1); }
+
+/* =============================================
+   RESPONSIVIDADE
+   ============================================= */
+@media (max-width: 992px) {
+  .hero-slide { height: 400px; }
+  .hero-content h1 { font-size: 2.2rem; }
+  .navbar-nav .nav-link::after { display: none; }
+}
+
+@media (max-width: 768px) {
+  .hero-slide { height: 340px; }
+  .hero-content h1 { font-size: 1.8rem; }
+  .hero-content p { font-size: 0.95rem; }
+  #topbar .d-flex { flex-wrap: wrap; gap: 0.3rem; }
+  .section-title { font-size: 1.6rem; }
+  .sobre-stats { grid-template-columns: repeat(3, 1fr); }
+  .pastor-img-wrap img { width: 100%; height: 350px; }
+}
+
+@media (max-width: 576px) {
+  .hero-slide { height: 300px; }
+  .hero-content h1 { font-size: 1.5rem; }
+  .sobre-stats { grid-template-columns: repeat(2, 1fr); }
+}
