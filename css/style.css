@@ -184,7 +184,7 @@ img { max-width: 100%; }
   inset: 0;
   background: linear-gradient(90deg, rgba(0,31,63,0.85) 0%, rgba(0,31,63,0.4) 60%, transparent 100%);
 }
-.hero-slide-1 { background-image: url('../img/banner-sede.jpg'); background-position: center center; }
+.hero-slide-1 { background-image: url('../img/banner-sede.JPG'); background-position: center center; }
 .hero-slide-2 { background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1400&q=80'); }
 .hero-slide-3 { background-image: url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=1400&q=80'); }
 
