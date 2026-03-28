@@ -122,7 +122,7 @@ img { max-width: 100%; }
 }
 #mainNav.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
 
-.navbar-brand img { height: 60px; }
+.navbar-brand img { height: 70px; width: auto; }
 .navbar-brand .brand-text { line-height: 1.1; }
 .navbar-brand .brand-name { font-size: 0.75rem; font-weight: 700; color: var(--azul-escuro); }
 .navbar-brand .brand-sub  { font-size: 0.65rem; color: var(--laranja); text-transform: uppercase; letter-spacing: 0.5px; }
@@ -184,7 +184,7 @@ img { max-width: 100%; }
   inset: 0;
   background: linear-gradient(90deg, rgba(0,31,63,0.85) 0%, rgba(0,31,63,0.4) 60%, transparent 100%);
 }
-.hero-slide-1 { background-image: url('https://images.unsplash.com/photo-1438232992991-995b671a1d96?w=1400&q=80'); }
+.hero-slide-1 { background-image: url('../img/banner-sede.JPG'); background-position: center center; }
 .hero-slide-2 { background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1400&q=80'); }
 .hero-slide-3 { background-image: url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=1400&q=80'); }
 
