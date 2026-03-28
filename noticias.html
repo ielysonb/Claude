@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notícias – IADNME</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div id="topbar">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div class="d-flex flex-wrap gap-3">
+        <span class="topbar-item"><i class="bi bi-geo-alt-fill"></i> Nova Metrópole – SP</span>
+        <span class="topbar-item"><i class="bi bi-telephone-fill"></i> (11) 9 9999-0000</span>
+        <span class="topbar-item"><i class="bi bi-envelope-fill"></i> contato@iadnme.org.br</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="culto-ao-vivo.html" class="topbar-item text-warning fw-bold"><i class="bi bi-broadcast"></i> Ao Vivo</a>
+        <div class="d-flex gap-2">
+          <a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a><a href="#"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="mainNav" class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="img/logo.png" onerror="this.onerror=null;this.src='https://placehold.co/60x60/001F3F/FFD700?text=AD'" alt="Logo IADNME" />
+      <div class="brand-text d-none d-sm-block"><div class="brand-name">Assembleia de Deus</div><div class="brand-sub">Nova Metrópole</div></div>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="credo.html">Nosso Credo</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Liderança</a>
+          <ul class="dropdown-menu border-0 shadow">
+            <li><a class="dropdown-item" href="pastor.html">Pastor Presidente</a></li>
+            <li><a class="dropdown-item" href="pastores.html">Pastores</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link active" href="noticias.html">Notícias</a></li>
+        <li class="nav-item"><a class="nav-link" href="eventos.html">Eventos</a></li>
+        <li class="nav-item"><a class="nav-link nav-ao-vivo" href="culto-ao-vivo.html"><i class="bi bi-broadcast me-1"></i>Ao Vivo</a></li>
+        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <h1>Últimas <span class="text-warning">Notícias</span></h1>
+    <p class="mt-2">Fique por dentro de tudo que acontece na IADNME</p>
+    <div class="breadcrumb-custom">
+      <a href="index.html">Home</a> <span class="mx-2">/</span> <span>Notícias</span>
+    </div>
+  </div>
+</section>
+
+<!-- NOTÍCIAS -->
+<section class="py-5">
+  <div class="container">
+    <!-- Filtros -->
+    <div class="d-flex flex-wrap gap-2 mb-5 justify-content-center">
+      <button class="btn btn-sm rounded-pill px-4 fw-semibold" style="background:#FF6B35;color:#fff;">Todas</button>
+      <button class="btn btn-sm rounded-pill px-4 fw-semibold" style="background:#f0f0f0;color:#333;">Evangelismo</button>
+      <button class="btn btn-sm rounded-pill px-4 fw-semibold" style="background:#f0f0f0;color:#333;">Jovens</button>
+      <button class="btn btn-sm rounded-pill px-4 fw-semibold" style="background:#f0f0f0;color:#333;">Missões</button>
+      <button class="btn btn-sm rounded-pill px-4 fw-semibold" style="background:#f0f0f0;color:#333;">Cultos</button>
+      <button class="btn btn-sm rounded-pill px-4 fw-semibold" style="background:#f0f0f0;color:#333;">Social</button>
+    </div>
+
+    <!-- Notícia destaque -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="rounded-4 overflow-hidden position-relative" style="height:420px;">
+          <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=1400&q=80" alt="Destaque" style="width:100%;height:100%;object-fit:cover;" />
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 20%,rgba(0,31,63,.9));display:flex;align-items:flex-end;padding:2rem;">
+            <div class="text-white">
+              <span class="badge mb-2" style="background:#FF6B35;font-size:.78rem;">Evangelismo</span>
+              <h2 class="fw-bold mb-2">Campanha de evangelismo alcança mais de 200 pessoas em março</h2>
+              <p class="mb-2" style="opacity:.85;">Durante o mês de março, a IADNME realizou uma série de ações evangelísticas no bairro Nova Metrópole, distribuindo cestas básicas, orando pelos moradores e pregando o Evangelho de casa em casa.</p>
+              <div class="d-flex align-items-center gap-3" style="font-size:.85rem;opacity:.75;">
+                <span><i class="bi bi-calendar3 me-1"></i> 20 mar 2025</span>
+                <span><i class="bi bi-person me-1"></i> Redação IADNME</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grade de notícias -->
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="noticia-card h-100">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" alt="Jovens" /></div>
+          <div class="card-body">
+            <span class="categoria">Jovens</span>
+            <h5>União de Jovens lança projeto social na comunidade</h5>
+            <p>O Departamento de Jovens da IADNME iniciou um projeto de assistência a crianças em situação de vulnerabilidade no bairro...</p>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <span class="data"><i class="bi bi-calendar3"></i> 15 mar 2025</span>
+              <a href="#" class="text-laranja fw-semibold" style="font-size:.85rem;">Ler mais <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="noticia-card h-100">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?w=600&q=80" alt="Sede" /></div>
+          <div class="card-body">
+            <span class="categoria">Cultos</span>
+            <h5>Nova sede da congregação Sul é inaugurada com louvor</h5>
+            <p>Em grande celebração, a IADNME inaugurou as novas instalações da Congregação Sul, com capacidade para 300 pessoas...</p>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <span class="data"><i class="bi bi-calendar3"></i> 10 mar 2025</span>
+              <a href="#" class="text-laranja fw-semibold" style="font-size:.85rem;">Ler mais <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="noticia-card h-100">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?w=600&q=80" alt="Missões" /></div>
+          <div class="card-body">
+            <span class="categoria">Missões</span>
+            <h5>Equipe missionária parte para o interior do Pará</h5>
+            <p>Uma equipe de 12 missionários da IADNME partiu para uma viagem de evangelismo no interior do estado do Pará...</p>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <span class="data"><i class="bi bi-calendar3"></i> 05 mar 2025</span>
+              <a href="#" class="text-laranja fw-semibold" style="font-size:.85rem;">Ler mais <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="noticia-card h-100">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80" alt="Casais" /></div>
+          <div class="card-body">
+            <span class="categoria">Social</span>
+            <h5>Encontro de Casais reúne mais de 150 famílias</h5>
+            <p>O Encontro de Casais realizado na última sexta-feira reuniu mais de 150 casais em uma noite de louvor, palavra e renovação...</p>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <span class="data"><i class="bi bi-calendar3"></i> 28 fev 2025</span>
+              <a href="#" class="text-laranja fw-semibold" style="font-size:.85rem;">Ler mais <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="noticia-card h-100">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&q=80" alt="Congresso" /></div>
+          <div class="card-body">
+            <span class="categoria">Jovens</span>
+            <h5>Pré-congresso de jovens movimenta a IADNME</h5>
+            <p>A preparação para o Congresso de Jovens 2025 já começou, com reuniões semanais de oração e ensaios do ministério de louvor...</p>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <span class="data"><i class="bi bi-calendar3"></i> 20 fev 2025</span>
+              <a href="#" class="text-laranja fw-semibold" style="font-size:.85rem;">Ler mais <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="noticia-card h-100">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1526649661456-89c7ed4d00b8?w=600&q=80" alt="EBD" /></div>
+          <div class="card-body">
+            <span class="categoria">Ensino</span>
+            <h5>EBD lança novo material didático para 2025</h5>
+            <p>A Escola Bíblica Dominical da IADNME apresentou o novo material didático para o ano de 2025, com foco no crescimento espiritual...</p>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <span class="data"><i class="bi bi-calendar3"></i> 10 fev 2025</span>
+              <a href="#" class="text-laranja fw-semibold" style="font-size:.85rem;">Ler mais <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paginação -->
+    <div class="d-flex justify-content-center mt-5">
+      <nav>
+        <ul class="pagination">
+          <li class="page-item disabled"><a class="page-link" href="#">«</a></li>
+          <li class="page-item active"><a class="page-link" href="#" style="background:#FF6B35;border-color:#FF6B35;">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">»</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta-jesus">
+  <div class="container">
+    <h2>Eu quero entregar minha vida a Jesus Cristo!</h2>
+    <p>Dê esse passo agora. Nossa equipe está pronta para orar e te acompanhar.</p>
+    <button class="btn-outline-branco px-4 py-2" data-bs-toggle="modal" data-bs-target="#modalJesus">
+      <i class="bi bi-heart me-2"></i> Quero aceitar Jesus
+    </button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-brand">
+          <img src="img/logo.png" onerror="this.onerror=null;this.src='https://placehold.co/70x70/FFD700/001F3F?text=AD'" alt="Logo IADNME" />
+          <p>Igreja Assembleia de Deus Nova Metrópole – comprometida com a pregação do Evangelho.</p>
+          <div class="social-icons mt-3">
+            <a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a><a href="#"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 col-6">
+        <h6>Institucional</h6>
+        <ul>
+          <li><a href="index.html">Home</a></li><li><a href="credo.html">Nosso Credo</a></li>
+          <li><a href="pastor.html">Pastor Presidente</a></li><li><a href="pastores.html">Pastores</a></li>
+          <li><a href="noticias.html">Notícias</a></li><li><a href="eventos.html">Eventos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 col-6">
+        <h6>Ministérios</h6>
+        <ul>
+          <li><a href="#">União de Jovens</a></li><li><a href="#">Círculo de Oração</a></li>
+          <li><a href="#">Dep. Masculino</a></li><li><a href="#">Escola Bíblica Infantil</a></li>
+          <li><a href="#">Ministério de Louvor</a></li><li><a href="#">Dep. de Missões</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6>Contato</h6>
+        <ul>
+          <li><a href="#"><i class="bi bi-geo-alt me-1"></i> Nova Metrópole – SP</a></li>
+          <li><a href="#"><i class="bi bi-telephone me-1"></i> (11) 9 9999-0000</a></li>
+          <li><a href="#"><i class="bi bi-envelope me-1"></i> contato@iadnme.org.br</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container">© 2025 IADNME – Igreja Assembleia de Deus Nova Metrópole. | <a href="#">Política de Privacidade</a></div></div>
+</footer>
+
+<div class="modal fade" id="modalJesus" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow">
+      <div class="modal-header"><h5 class="modal-title fw-bold"><i class="bi bi-heart-fill me-2"></i> Quero Aceitar Jesus!</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body p-4">
+        <form id="formJesus">
+          <div class="mb-3"><label class="form-label fw-semibold">Nome *</label><input type="text" class="form-control" id="jesusNome" required /></div>
+          <div class="mb-3"><label class="form-label fw-semibold">WhatsApp</label><input type="tel" class="form-control" id="jesusPhone" /></div>
+          <div class="mb-4"><label class="form-label fw-semibold">E-mail</label><input type="email" class="form-control" id="jesusEmail" /></div>
+          <button type="submit" class="btn-laranja w-100 py-2"><i class="bi bi-heart me-2"></i> Quero Aceitar Jesus!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<button id="scrollTop" title="Voltar ao topo"><i class="bi bi-chevron-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

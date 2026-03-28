@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IADNME – Igreja Assembleia de Deus Nova Metrópole</title>
+  <meta name="description" content="Igreja Assembleia de Deus Nova Metrópole – Conservando a chama pentecostal." />
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body>
+
+<!-- ====================== TOP BAR ====================== -->
+<div id="topbar">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div class="d-flex flex-wrap gap-3">
+        <span class="topbar-item"><i class="bi bi-geo-alt-fill"></i> Nova Metrópole – SP</span>
+        <span class="topbar-item"><i class="bi bi-telephone-fill"></i> (11) 9 9999-0000</span>
+        <span class="topbar-item"><i class="bi bi-envelope-fill"></i> contato@iadnme.org.br</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="culto-ao-vivo.html" class="topbar-item text-warning fw-bold">
+          <i class="bi bi-broadcast"></i> Ao Vivo
+        </a>
+        <div class="d-flex gap-2">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+          <a href="#"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== NAVBAR ====================== -->
+<nav id="mainNav" class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="img/logo.png"
+           onerror="this.onerror=null;this.src='https://placehold.co/60x60/001F3F/FFD700?text=AD'"
+           alt="Logo IADNME" />
+      <div class="brand-text d-none d-sm-block">
+        <div class="brand-name">Assembleia de Deus</div>
+        <div class="brand-sub">Nova Metrópole</div>
+      </div>
+    </a>
+
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="credo.html">Nosso Credo</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Liderança</a>
+          <ul class="dropdown-menu border-0 shadow">
+            <li><a class="dropdown-item" href="pastor.html">Pastor Presidente</a></li>
+            <li><a class="dropdown-item" href="pastores.html">Pastores</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="noticias.html">Notícias</a></li>
+        <li class="nav-item"><a class="nav-link" href="eventos.html">Eventos</a></li>
+        <li class="nav-item"><a class="nav-link nav-ao-vivo" href="culto-ao-vivo.html"><i class="bi bi-broadcast me-1"></i>Ao Vivo</a></li>
+        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ====================== HERO CAROUSEL ====================== -->
+<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+  </div>
+  <div class="carousel-inner">
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <div class="hero-slide hero-slide-1">
+        <div class="container">
+          <div class="hero-content">
+            <span class="tag">2025 – Ano da Adoração</span>
+            <h1>Adorai ao <span>Senhor</span><br>com toda força!</h1>
+            <p>Venha participar dos nossos cultos e encontrar a presença de Deus.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="culto-ao-vivo.html" class="btn-laranja">
+                <i class="bi bi-broadcast me-1"></i> Culto ao Vivo
+              </a>
+              <a href="contato.html" class="btn-outline-branco">Fale Conosco</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <div class="hero-slide hero-slide-2">
+        <div class="container">
+          <div class="hero-content">
+            <span class="tag">Nossa Missão</span>
+            <h1>Pregando o <span>Evangelho</span><br>a toda criatura</h1>
+            <p>Comprometidos com o crescimento espiritual e a evangelização.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="credo.html" class="btn-laranja">Nosso Credo</a>
+              <a href="pastor.html" class="btn-outline-branco">Conheça o Pastor</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <div class="hero-slide hero-slide-3">
+        <div class="container">
+          <div class="hero-content">
+            <span class="tag">Próximos Eventos</span>
+            <h1>Participe dos <span>nossos</span><br>eventos especiais</h1>
+            <p>Conferências, congressos e encontros que transformam vidas.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="eventos.html" class="btn-laranja">Ver Eventos</a>
+              <a href="noticias.html" class="btn-outline-branco">Notícias</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<!-- ====================== ACESSO RÁPIDO ====================== -->
+<section id="acesso-rapido">
+  <div class="container">
+    <div class="row g-2 justify-content-center">
+      <div class="col-6 col-sm-4 col-md-2">
+        <a href="culto-ao-vivo.html" class="acesso-card">
+          <i class="bi bi-play-circle-fill"></i>
+          <span>IADNME TV</span>
+        </a>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <a href="#" class="acesso-card" data-bs-toggle="modal" data-bs-target="#modalJesus">
+          <i class="bi bi-gift-fill"></i>
+          <span>Oferta</span>
+        </a>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <a href="contato.html#localizacao" class="acesso-card">
+          <i class="bi bi-building-fill"></i>
+          <span>Igrejas</span>
+        </a>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <a href="#" class="acesso-card">
+          <i class="bi bi-arrow-down-circle-fill"></i>
+          <span>Downloads</span>
+        </a>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <a href="#" class="acesso-card">
+          <i class="bi bi-book-fill"></i>
+          <span>EBD</span>
+        </a>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <a href="eventos.html" class="acesso-card">
+          <i class="bi bi-calendar-event-fill"></i>
+          <span>Agenda</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== VERSÍCULO ====================== -->
+<section id="versiculo">
+  <div class="container">
+    <blockquote>
+      "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna."
+    </blockquote>
+    <cite class="d-block mt-2">— João 3:16</cite>
+  </div>
+</section>
+
+<!-- ====================== SOBRE A IGREJA ====================== -->
+<section id="sobre">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="sobre-img">
+          <img src="https://images.unsplash.com/photo-1526649661456-89c7ed4d00b8?w=800&q=80"
+               alt="Interior da Igreja IADNME" />
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <p class="text-laranja fw-bold text-uppercase" style="font-size:.85rem;letter-spacing:1px;">Quem somos</p>
+        <h2 class="section-title">Igreja Assembleia de Deus<br><span>Nova Metrópole</span></h2>
+        <div class="section-divider" style="margin-left:0;"></div>
+        <p class="text-muted mb-3">
+          Fundada com o propósito de pregar o Evangelho de Jesus Cristo, a IADNME é uma comunidade de fé comprometida com a renovação espiritual, o discipulado e o serviço ao próximo.
+        </p>
+        <p class="text-muted mb-4">
+          Com base nos princípios pentecostais, nossa igreja busca ser um lugar de encontro com Deus, de crescimento na fé e de transformação de vidas — na comunidade local e além.
+        </p>
+        <div class="sobre-stats mb-4">
+          <div class="stat-item">
+            <div class="numero" data-target="15" data-suffix="+">&nbsp;</div>
+            <div class="label">Anos de história</div>
+          </div>
+          <div class="stat-item">
+            <div class="numero" data-target="1200" data-suffix="+">&nbsp;</div>
+            <div class="label">Membros ativos</div>
+          </div>
+          <div class="stat-item">
+            <div class="numero" data-target="8" data-suffix="">&nbsp;</div>
+            <div class="label">Congregações</div>
+          </div>
+        </div>
+        <a href="credo.html" class="btn-laranja">Conheça nossa história</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PRÓXIMOS EVENTOS ====================== -->
+<section id="eventos">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="text-laranja fw-bold text-uppercase" style="font-size:.85rem;letter-spacing:1px;">
+        <i class="bi bi-calendar-event me-1"></i> Agenda
+      </p>
+      <h2 class="section-title">Próximos <span>Eventos</span></h2>
+      <div class="section-divider"></div>
+      <p class="text-muted">Confira os eventos especiais preparados para você e sua família</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Evento 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="evento-card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&q=80" alt="Congresso de Jovens" />
+            <div class="card-date"><div class="dia">15</div><div class="mes">ABR</div></div>
+          </div>
+          <div class="card-body">
+            <h5>Congresso de Jovens 2025</h5>
+            <p>Um evento especial para a juventude com louvores, pregações e muito mais. Não perca!</p>
+            <div class="card-meta"><i class="bi bi-clock text-laranja"></i> 19h00 &nbsp;|&nbsp; <i class="bi bi-geo-alt text-laranja"></i> Sede</div>
+          </div>
+        </div>
+      </div>
+      <!-- Evento 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="evento-card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80" alt="Encontro de Casais" />
+            <div class="card-date"><div class="dia">22</div><div class="mes">ABR</div></div>
+          </div>
+          <div class="card-body">
+            <h5>Encontro de Casais</h5>
+            <p>Fortaleça seu casamento na presença de Deus. Um final de semana de renovação e bênção.</p>
+            <div class="card-meta"><i class="bi bi-clock text-laranja"></i> 08h00 &nbsp;|&nbsp; <i class="bi bi-geo-alt text-laranja"></i> Centro de Convenções</div>
+          </div>
+        </div>
+      </div>
+      <!-- Evento 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="evento-card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?w=600&q=80" alt="Semana Santa" />
+            <div class="card-date"><div class="dia">14</div><div class="mes">ABR</div></div>
+          </div>
+          <div class="card-body">
+            <h5>Semana Santa – Paixão de Cristo</h5>
+            <p>Programação especial de Semana Santa com cultos diários, drama e meditações bíblicas.</p>
+            <div class="card-meta"><i class="bi bi-clock text-laranja"></i> 20h00 &nbsp;|&nbsp; <i class="bi bi-geo-alt text-laranja"></i> Sede</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="eventos.html" class="btn-laranja me-3">Ver todos os eventos</a>
+      <a href="#" class="btn-outline-azul">Baixar agenda</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CULTO AO VIVO ====================== -->
+<section id="culto-ao-vivo">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="live-badge">
+          <span class="dot"></span> Ao Vivo
+        </div>
+        <h2 class="section-title text-white">Cultos & <span class="text-dourado">Horários</span></h2>
+        <div class="section-divider" style="margin-left:0;"></div>
+        <p class="text-white-50 mb-4">
+          Venha adorar a Deus em espírito e em verdade. Todos são bem-vindos em nossos cultos semanais.
+        </p>
+        <ul class="horarios-culto">
+          <li>
+            <i class="bi bi-calendar3"></i>
+            <span class="dia-semana">Domingo</span>
+            <span class="horario">09h00 – EBD</span>
+          </li>
+          <li>
+            <i class="bi bi-calendar3"></i>
+            <span class="dia-semana">Domingo</span>
+            <span class="horario">19h00 – Culto de Celebração</span>
+          </li>
+          <li>
+            <i class="bi bi-calendar3"></i>
+            <span class="dia-semana">Terça-feira</span>
+            <span class="horario">19h30 – Culto da Família</span>
+          </li>
+          <li>
+            <i class="bi bi-calendar3"></i>
+            <span class="dia-semana">Quinta-feira</span>
+            <span class="horario">19h30 – Estudo Bíblico</span>
+          </li>
+          <li>
+            <i class="bi bi-calendar3"></i>
+            <span class="dia-semana">Sexta-feira</span>
+            <span class="horario">19h30 – Culto de Santa Ceia</span>
+          </li>
+        </ul>
+        <a href="culto-ao-vivo.html" class="btn-laranja mt-3">
+          <i class="bi bi-play-circle me-1"></i> Assistir ao Vivo
+        </a>
+      </div>
+      <div class="col-lg-6">
+        <div class="video-placeholder">
+          <div class="play-btn"><i class="bi bi-play-fill ms-1"></i></div>
+          <p>Clique para assistir o último culto</p>
+          <small class="text-white-50">Transmissão ao vivo todos os domingos às 19h</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== MINISTÉRIOS ====================== -->
+<section id="ministerios">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="text-laranja fw-bold text-uppercase" style="font-size:.85rem;letter-spacing:1px;">Departamentos</p>
+      <h2 class="section-title">Nossos <span>Ministérios</span></h2>
+      <div class="section-divider"></div>
+      <p class="text-muted">Encontre seu lugar de serviço e crescimento na igreja</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="ministerio-card">
+          <div class="icon"><i class="bi bi-people-fill"></i></div>
+          <h5>Jovens</h5>
+          <p>União de Jovens</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="ministerio-card">
+          <div class="icon"><i class="bi bi-heart-fill"></i></div>
+          <h5>Mulheres</h5>
+          <p>Círculo de Oração</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="ministerio-card">
+          <div class="icon"><i class="bi bi-person-fill"></i></div>
+          <h5>Homens</h5>
+          <p>Departamento Masculino</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="ministerio-card">
+          <div class="icon"><i class="bi bi-balloon-heart-fill"></i></div>
+          <h5>Crianças</h5>
+          <p>Escola Bíblica Infantil</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="ministerio-card">
+          <div class="icon"><i class="bi bi-music-note-beamed"></i></div>
+          <h5>Louvor</h5>
+          <p>Ministério de Música</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="ministerio-card">
+          <div class="icon"><i class="bi bi-globe-americas"></i></div>
+          <h5>Missões</h5>
+          <p>Dep. de Missões</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PASTOR PRESIDENTE ====================== -->
+<section id="pastor">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5 text-center">
+        <div class="pastor-img-wrap">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+               alt="Pastor Presidente" />
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <p class="text-laranja fw-bold text-uppercase" style="font-size:.85rem;letter-spacing:1px;">Liderança</p>
+        <h2 class="section-title">Pastor <span>Presidente</span></h2>
+        <div class="section-divider" style="margin-left:0;"></div>
+        <h4 class="fw-bold text-azul mb-1">Rev. João da Silva Oliveira</h4>
+        <p class="text-laranja mb-3 fw-semibold">Pastor Presidente – IADNME</p>
+        <div class="pastor-quote">
+          "Nosso chamado é pregar Cristo crucificado e ressurreto, discipular cada crente e alcançar os perdidos com o amor de Deus."
+        </div>
+        <p class="text-muted mb-4">
+          Há mais de 20 anos servindo ao Senhor, o Pastor João tem dedicado sua vida à edificação do Corpo de Cristo. Graduado em Teologia e com pós-graduação em Missões, lidera a IADNME com humildade, visão e fervor espiritual.
+        </p>
+        <a href="pastor.html" class="btn-laranja">Conheça o Pastor</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ÚLTIMAS NOTÍCIAS ====================== -->
+<section id="noticias">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="text-laranja fw-bold text-uppercase" style="font-size:.85rem;letter-spacing:1px;">
+        <i class="bi bi-newspaper me-1"></i> Blog
+      </p>
+      <h2 class="section-title">Últimas <span>Notícias</span></h2>
+      <div class="section-divider"></div>
+      <p class="text-muted">Fique por dentro de tudo que acontece na IADNME</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="noticia-card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=600&q=80" alt="Notícia 1" />
+          </div>
+          <div class="card-body">
+            <span class="categoria">Evangelismo</span>
+            <h5>Campanha de evangelismo alcança mais de 200 pessoas</h5>
+            <p>Durante o mês de março, a IADNME realizou uma série de ações evangelísticas no bairro Nova Metrópole...</p>
+            <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+              <span class="data"><i class="bi bi-calendar3"></i> 20 mar 2025</span>
+              <a href="noticias.html" class="text-laranja fw-semibold" style="font-size:.85rem;">Ler mais <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="noticia-card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" alt="Notícia 2" />
+          </div>
+          <div class="card-body">
+            <span class="categoria">Jovens</span>
+            <h5>União de Jovens lança projeto social na comunidade</h5>
+            <p>O Departamento de Jovens da IADNME iniciou um projeto de assistência a crianças em situação de vulnerabilidade...</p>
+            <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+              <span class="data"><i class="bi bi-calendar3"></i> 15 mar 2025</span>
+              <a href="noticias.html" class="text-laranja fw-semibold" style="font-size:.85rem;">Ler mais <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="noticia-card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?w=600&q=80" alt="Notícia 3" />
+          </div>
+          <div class="card-body">
+            <span class="categoria">Culto</span>
+            <h5>Nova sede da congregação Sul é inaugurada com louvor</h5>
+            <p>Em grande celebração, a IADNME inaugurou as novas instalações da Congregação Sul, com capacidade para 300 pessoas...</p>
+            <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+              <span class="data"><i class="bi bi-calendar3"></i> 10 mar 2025</span>
+              <a href="noticias.html" class="text-laranja fw-semibold" style="font-size:.85rem;">Ler mais <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <a href="noticias.html" class="btn-laranja">Ver todas as notícias</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CTA ENTREGA DE VIDA ====================== -->
+<section id="cta-jesus">
+  <div class="container position-relative">
+    <i class="bi bi-heart-fill" style="font-size:3rem;opacity:.15;position:absolute;top:-1rem;left:50%;transform:translateX(-50%);"></i>
+    <h2>Eu quero entregar minha vida a Jesus Cristo!</h2>
+    <p>Se você ainda não conhece Jesus, ou deseja se reconciliar com Deus, dê esse passo agora. Nossa equipe está pronta para orar e te acompanhar.</p>
+    <button class="btn-outline-branco px-4 py-2" data-bs-toggle="modal" data-bs-target="#modalJesus">
+      <i class="bi bi-heart me-2"></i> Quero aceitar Jesus
+    </button>
+  </div>
+</section>
+
+<!-- ====================== LOCALIZAÇÃO ====================== -->
+<section id="localizacao">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="text-laranja fw-bold text-uppercase" style="font-size:.85rem;letter-spacing:1px;">
+        <i class="bi bi-geo-alt me-1"></i> Como chegar
+      </p>
+      <h2 class="section-title">Nossa <span>Localização</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <div class="endereco-item">
+          <div class="icon"><i class="bi bi-geo-alt-fill"></i></div>
+          <div>
+            <h6>Sede Principal</h6>
+            <p>Rua das Flores, 140 – Nova Metrópole, SP<br>CEP: 00000-000</p>
+          </div>
+        </div>
+        <div class="endereco-item">
+          <div class="icon"><i class="bi bi-telephone-fill"></i></div>
+          <div>
+            <h6>Telefone / WhatsApp</h6>
+            <p>(11) 9 9999-0000</p>
+          </div>
+        </div>
+        <div class="endereco-item">
+          <div class="icon"><i class="bi bi-envelope-fill"></i></div>
+          <div>
+            <h6>E-mail</h6>
+            <p>contato@iadnme.org.br</p>
+          </div>
+        </div>
+        <div class="endereco-item">
+          <div class="icon"><i class="bi bi-clock-fill"></i></div>
+          <div>
+            <h6>Secretaria</h6>
+            <p>Seg a Sex: 08h–12h e 14h–18h<br>Sáb: 08h–12h</p>
+          </div>
+        </div>
+        <a href="contato.html" class="btn-laranja mt-2">Fale Conosco</a>
+      </div>
+      <div class="col-lg-7">
+        <div class="mapa-placeholder">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.975!2d-46.6333!3d-23.5505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzAxLjgiUyA0NsKwMzgnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Localização da IADNME">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== FOOTER ====================== -->
+<footer id="footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-brand">
+          <img src="img/logo.png"
+               onerror="this.onerror=null;this.src='https://placehold.co/70x70/FFD700/001F3F?text=AD'"
+               alt="Logo IADNME" />
+          <p>Igreja Assembleia de Deus Nova Metrópole – comprometida com a pregação do Evangelho e o crescimento espiritual de cada membro.</p>
+          <div class="social-icons mt-3">
+            <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" title="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 col-6">
+        <h6>Institucional</h6>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="credo.html">Nosso Credo</a></li>
+          <li><a href="pastor.html">Pastor Presidente</a></li>
+          <li><a href="pastores.html">Pastores</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 col-6">
+        <h6>Ministérios</h6>
+        <ul>
+          <li><a href="#">União de Jovens</a></li>
+          <li><a href="#">Círculo de Oração</a></li>
+          <li><a href="#">Dep. Masculino</a></li>
+          <li><a href="#">Escola Bíblica Infantil</a></li>
+          <li><a href="#">Ministério de Louvor</a></li>
+          <li><a href="#">Dep. de Missões</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6>Contato</h6>
+        <ul>
+          <li><a href="#"><i class="bi bi-geo-alt me-1"></i> Nova Metrópole – SP</a></li>
+          <li><a href="#"><i class="bi bi-telephone me-1"></i> (11) 9 9999-0000</a></li>
+          <li><a href="#"><i class="bi bi-envelope me-1"></i> contato@iadnme.org.br</a></li>
+        </ul>
+        <h6 class="mt-4">Horários de Culto</h6>
+        <ul style="font-size:.82rem;color:rgba(255,255,255,.6);">
+          <li>Dom 09h – EBD</li>
+          <li>Dom 19h – Culto</li>
+          <li>Ter 19h30 – Família</li>
+          <li>Qui 19h30 – Estudo</li>
+          <li>Sex 19h30 – Santa Ceia</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      © 2025 IADNME – Igreja Assembleia de Deus Nova Metrópole. Todos os direitos reservados. |
+      <a href="#">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ====================== MODAL ENTREGA DE VIDA ====================== -->
+<div class="modal fade" id="modalJesus" tabindex="-1" aria-labelledby="modalJesusLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="modalJesusLabel">
+          <i class="bi bi-heart-fill me-2"></i> Quero Aceitar Jesus!
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-4">
+        <p class="text-muted mb-4">Preencha os dados abaixo e nossa equipe entrará em contato para acompanhar você nessa decisão.</p>
+        <form id="formJesus">
+          <div class="mb-3">
+            <label for="jesusNome" class="form-label fw-semibold">Nome completo *</label>
+            <input type="text" class="form-control" id="jesusNome" placeholder="Seu nome" required />
+          </div>
+          <div class="mb-3">
+            <label for="jesusPhone" class="form-label fw-semibold">WhatsApp</label>
+            <input type="tel" class="form-control" id="jesusPhone" placeholder="(11) 9 9999-0000" />
+          </div>
+          <div class="mb-3">
+            <label for="jesusEmail" class="form-label fw-semibold">E-mail</label>
+            <input type="email" class="form-control" id="jesusEmail" placeholder="seu@email.com" />
+          </div>
+          <div class="mb-4">
+            <label for="jesusMsg" class="form-label fw-semibold">Mensagem (opcional)</label>
+            <textarea class="form-control" id="jesusMsg" rows="3" placeholder="Escreva sua mensagem..."></textarea>
+          </div>
+          <button type="submit" class="btn-laranja w-100 py-2">
+            <i class="bi bi-heart me-2"></i> Quero Aceitar Jesus!
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== SCROLL TO TOP ====================== -->
+<button id="scrollTop" title="Voltar ao topo"><i class="bi bi-chevron-up"></i></button>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="js/main.js"></script>
+</body>
+</html>

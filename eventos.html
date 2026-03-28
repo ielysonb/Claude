@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventos – IADNME</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .agenda-item {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0,0,0,.08);
+      transition: transform .3s, box-shadow .3s;
+      margin-bottom: 1rem;
+    }
+    .agenda-item:hover { transform: translateX(6px); box-shadow: 0 8px 30px rgba(0,0,0,.12); }
+    .agenda-date {
+      min-width: 70px;
+      text-align: center;
+      background: linear-gradient(135deg, #001F3F, #003366);
+      color: #fff;
+      border-radius: 10px;
+      padding: .75rem .5rem;
+      flex-shrink: 0;
+    }
+    .agenda-date .dia { font-size: 1.8rem; font-weight: 800; line-height: 1; }
+    .agenda-date .mes { font-size: .7rem; text-transform: uppercase; color: #FFD700; font-weight: 600; }
+    .agenda-date .ano { font-size: .7rem; opacity: .6; }
+    .agenda-info h5 { font-weight: 700; color: #001F3F; margin-bottom: .25rem; }
+    .agenda-info .meta { font-size: .82rem; color: #888; }
+    .agenda-info .meta i { color: #FF6B35; }
+    .tag-evento { font-size: .72rem; font-weight: 700; padding: .15rem .5rem; border-radius: 4px; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div id="topbar">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div class="d-flex flex-wrap gap-3">
+        <span class="topbar-item"><i class="bi bi-geo-alt-fill"></i> Nova Metrópole – SP</span>
+        <span class="topbar-item"><i class="bi bi-telephone-fill"></i> (11) 9 9999-0000</span>
+        <span class="topbar-item"><i class="bi bi-envelope-fill"></i> contato@iadnme.org.br</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="culto-ao-vivo.html" class="topbar-item text-warning fw-bold"><i class="bi bi-broadcast"></i> Ao Vivo</a>
+        <div class="d-flex gap-2">
+          <a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a><a href="#"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="mainNav" class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="img/logo.png" onerror="this.onerror=null;this.src='https://placehold.co/60x60/001F3F/FFD700?text=AD'" alt="Logo IADNME" />
+      <div class="brand-text d-none d-sm-block"><div class="brand-name">Assembleia de Deus</div><div class="brand-sub">Nova Metrópole</div></div>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="credo.html">Nosso Credo</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Liderança</a>
+          <ul class="dropdown-menu border-0 shadow">
+            <li><a class="dropdown-item" href="pastor.html">Pastor Presidente</a></li>
+            <li><a class="dropdown-item" href="pastores.html">Pastores</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="noticias.html">Notícias</a></li>
+        <li class="nav-item"><a class="nav-link active" href="eventos.html">Eventos</a></li>
+        <li class="nav-item"><a class="nav-link nav-ao-vivo" href="culto-ao-vivo.html"><i class="bi bi-broadcast me-1"></i>Ao Vivo</a></li>
+        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <h1>Eventos & <span class="text-warning">Agenda</span></h1>
+    <p class="mt-2">Participe dos eventos que Deus preparou para sua vida</p>
+    <div class="breadcrumb-custom">
+      <a href="index.html">Home</a> <span class="mx-2">/</span> <span>Eventos</span>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTOS DESTAQUES -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="text-laranja fw-bold text-uppercase" style="font-size:.85rem;letter-spacing:1px;">Em destaque</p>
+      <h2 class="section-title">Próximos <span>Eventos</span></h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="row g-4 mb-5">
+      <div class="col-md-6 col-lg-4">
+        <div class="evento-card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&q=80" alt="Congresso de Jovens" />
+            <div class="card-date"><div class="dia">15</div><div class="mes">ABR</div></div>
+          </div>
+          <div class="card-body">
+            <h5>Congresso de Jovens 2025</h5>
+            <p>Um evento especial para a juventude com louvores, pregações e muito mais. Não perca!</p>
+            <div class="d-flex gap-3 mb-3">
+              <span class="card-meta"><i class="bi bi-clock text-laranja"></i> 19h00</span>
+              <span class="card-meta"><i class="bi bi-geo-alt text-laranja"></i> Sede</span>
+            </div>
+            <span class="tag-evento" style="background:#FFF3E0;color:#FF6B35;">Jovens</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="evento-card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80" alt="Encontro de Casais" />
+            <div class="card-date"><div class="dia">22</div><div class="mes">ABR</div></div>
+          </div>
+          <div class="card-body">
+            <h5>Encontro de Casais</h5>
+            <p>Fortaleça seu casamento na presença de Deus. Um final de semana de renovação e bênção.</p>
+            <div class="d-flex gap-3 mb-3">
+              <span class="card-meta"><i class="bi bi-clock text-laranja"></i> 08h00</span>
+              <span class="card-meta"><i class="bi bi-geo-alt text-laranja"></i> Centro Conv.</span>
+            </div>
+            <span class="tag-evento" style="background:#E8F5E9;color:#2e7d32;">Família</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="evento-card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?w=600&q=80" alt="Semana Santa" />
+            <div class="card-date"><div class="dia">14</div><div class="mes">ABR</div></div>
+          </div>
+          <div class="card-body">
+            <h5>Semana Santa – Paixão de Cristo</h5>
+            <p>Programação especial de Semana Santa com cultos diários e meditações bíblicas.</p>
+            <div class="d-flex gap-3 mb-3">
+              <span class="card-meta"><i class="bi bi-clock text-laranja"></i> 20h00</span>
+              <span class="card-meta"><i class="bi bi-geo-alt text-laranja"></i> Sede</span>
+            </div>
+            <span class="tag-evento" style="background:#E3F2FD;color:#1565c0;">Culto</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AGENDA LISTA -->
+    <div class="text-center mb-4">
+      <h3 class="fw-bold text-azul">Agenda <span class="text-laranja">Completa</span></h3>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8">
+        <!-- Abril -->
+        <h5 class="fw-bold text-azul mb-3 d-flex align-items-center gap-2">
+          <span style="width:6px;height:24px;background:#FF6B35;border-radius:3px;display:inline-block;"></span>
+          Abril 2025
+        </h5>
+
+        <div class="agenda-item">
+          <div class="agenda-date"><div class="dia">06</div><div class="mes">ABR</div><div class="ano">2025</div></div>
+          <div class="agenda-info flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-1">
+              <h5 class="mb-0">Domingo de Ramos – Culto Especial</h5>
+              <span class="tag-evento" style="background:#E3F2FD;color:#1565c0;">Culto</span>
+            </div>
+            <div class="meta d-flex flex-wrap gap-3">
+              <span><i class="bi bi-clock"></i> 19h00</span>
+              <span><i class="bi bi-geo-alt"></i> Sede Principal</span>
+              <span><i class="bi bi-person"></i> Pastor João</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-date"><div class="dia">14</div><div class="mes">ABR</div><div class="ano">2025</div></div>
+          <div class="agenda-info flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-1">
+              <h5 class="mb-0">Semana Santa – Paixão de Cristo</h5>
+              <span class="tag-evento" style="background:#E3F2FD;color:#1565c0;">Culto</span>
+            </div>
+            <div class="meta d-flex flex-wrap gap-3">
+              <span><i class="bi bi-clock"></i> 20h00 – Seg a Sex</span>
+              <span><i class="bi bi-geo-alt"></i> Sede Principal</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-date"><div class="dia">15</div><div class="mes">ABR</div><div class="ano">2025</div></div>
+          <div class="agenda-info flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-1">
+              <h5 class="mb-0">Congresso de Jovens 2025</h5>
+              <span class="tag-evento" style="background:#FFF3E0;color:#FF6B35;">Jovens</span>
+            </div>
+            <div class="meta d-flex flex-wrap gap-3">
+              <span><i class="bi bi-clock"></i> 19h00</span>
+              <span><i class="bi bi-geo-alt"></i> Sede Principal</span>
+              <span><i class="bi bi-ticket"></i> Entrada gratuita</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-date"><div class="dia">20</div><div class="mes">ABR</div><div class="ano">2025</div></div>
+          <div class="agenda-info flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-1">
+              <h5 class="mb-0">Domingo de Páscoa – Culto da Ressurreição</h5>
+              <span class="tag-evento" style="background:#E8F5E9;color:#2e7d32;">Celebração</span>
+            </div>
+            <div class="meta d-flex flex-wrap gap-3">
+              <span><i class="bi bi-clock"></i> 09h00 e 19h00</span>
+              <span><i class="bi bi-geo-alt"></i> Sede Principal</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-date"><div class="dia">22</div><div class="mes">ABR</div><div class="ano">2025</div></div>
+          <div class="agenda-info flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-1">
+              <h5 class="mb-0">Encontro de Casais</h5>
+              <span class="tag-evento" style="background:#FCE4EC;color:#ad1457;">Família</span>
+            </div>
+            <div class="meta d-flex flex-wrap gap-3">
+              <span><i class="bi bi-clock"></i> 08h00 – Sáb e Dom</span>
+              <span><i class="bi bi-geo-alt"></i> Centro de Convenções</span>
+              <span><i class="bi bi-ticket"></i> Inscrição necessária</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Maio -->
+        <h5 class="fw-bold text-azul mb-3 mt-4 d-flex align-items-center gap-2">
+          <span style="width:6px;height:24px;background:#FF6B35;border-radius:3px;display:inline-block;"></span>
+          Maio 2025
+        </h5>
+
+        <div class="agenda-item">
+          <div class="agenda-date"><div class="dia">10</div><div class="mes">MAI</div><div class="ano">2025</div></div>
+          <div class="agenda-info flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-1">
+              <h5 class="mb-0">Dia das Mães – Culto Especial</h5>
+              <span class="tag-evento" style="background:#FCE4EC;color:#ad1457;">Celebração</span>
+            </div>
+            <div class="meta d-flex flex-wrap gap-3">
+              <span><i class="bi bi-clock"></i> 19h00</span>
+              <span><i class="bi bi-geo-alt"></i> Sede Principal</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-date"><div class="dia">24</div><div class="mes">MAI</div><div class="ano">2025</div></div>
+          <div class="agenda-info flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-1">
+              <h5 class="mb-0">Conferência de Louvor e Adoração</h5>
+              <span class="tag-evento" style="background:#E8EAF6;color:#3949ab;">Louvor</span>
+            </div>
+            <div class="meta d-flex flex-wrap gap-3">
+              <span><i class="bi bi-clock"></i> 19h30</span>
+              <span><i class="bi bi-geo-alt"></i> Ginásio Coberto</span>
+              <span><i class="bi bi-ticket"></i> Entrada gratuita</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <div class="p-4 rounded-4" style="background:linear-gradient(135deg,#001F3F,#003366);color:#fff;">
+          <h5 class="fw-bold mb-3" style="color:#FFD700;">
+            <i class="bi bi-calendar-event me-2"></i>Horários de Culto
+          </h5>
+          <ul style="list-style:none;padding:0;">
+            <li class="py-2 border-bottom border-white border-opacity-10 d-flex justify-content-between">
+              <span>Dom – EBD</span> <span style="color:#FFD700;">09h00</span>
+            </li>
+            <li class="py-2 border-bottom border-white border-opacity-10 d-flex justify-content-between">
+              <span>Dom – Culto</span> <span style="color:#FFD700;">19h00</span>
+            </li>
+            <li class="py-2 border-bottom border-white border-opacity-10 d-flex justify-content-between">
+              <span>Ter – Família</span> <span style="color:#FFD700;">19h30</span>
+            </li>
+            <li class="py-2 border-bottom border-white border-opacity-10 d-flex justify-content-between">
+              <span>Qui – Estudo</span> <span style="color:#FFD700;">19h30</span>
+            </li>
+            <li class="py-2 d-flex justify-content-between">
+              <span>Sex – Santa Ceia</span> <span style="color:#FFD700;">19h30</span>
+            </li>
+          </ul>
+          <a href="culto-ao-vivo.html" class="btn-laranja w-100 text-center mt-3">
+            <i class="bi bi-broadcast me-2"></i>Assistir ao Vivo
+          </a>
+        </div>
+
+        <div class="mt-4 p-4 rounded-4 bg-cinza">
+          <h5 class="fw-bold text-azul mb-3">
+            <i class="bi bi-bell me-2 text-laranja"></i>Receba avisos
+          </h5>
+          <p class="text-muted" style="font-size:.88rem;">Cadastre-se para receber notificações dos próximos eventos:</p>
+          <input type="email" class="form-control mb-2" placeholder="Seu e-mail" style="border-radius:8px;" />
+          <button class="btn-laranja w-100">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta-jesus">
+  <div class="container">
+    <h2>Eu quero entregar minha vida a Jesus Cristo!</h2>
+    <p>Dê esse passo agora. Nossa equipe está pronta para orar e te acompanhar.</p>
+    <button class="btn-outline-branco px-4 py-2" data-bs-toggle="modal" data-bs-target="#modalJesus">
+      <i class="bi bi-heart me-2"></i> Quero aceitar Jesus
+    </button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-brand">
+          <img src="img/logo.png" onerror="this.onerror=null;this.src='https://placehold.co/70x70/FFD700/001F3F?text=AD'" alt="Logo IADNME" />
+          <p>Igreja Assembleia de Deus Nova Metrópole – comprometida com a pregação do Evangelho.</p>
+          <div class="social-icons mt-3">
+            <a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a><a href="#"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 col-6">
+        <h6>Institucional</h6>
+        <ul>
+          <li><a href="index.html">Home</a></li><li><a href="credo.html">Nosso Credo</a></li>
+          <li><a href="pastor.html">Pastor Presidente</a></li><li><a href="pastores.html">Pastores</a></li>
+          <li><a href="noticias.html">Notícias</a></li><li><a href="eventos.html">Eventos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 col-6">
+        <h6>Ministérios</h6>
+        <ul>
+          <li><a href="#">União de Jovens</a></li><li><a href="#">Círculo de Oração</a></li>
+          <li><a href="#">Dep. Masculino</a></li><li><a href="#">Escola Bíblica Infantil</a></li>
+          <li><a href="#">Ministério de Louvor</a></li><li><a href="#">Dep. de Missões</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6>Contato</h6>
+        <ul>
+          <li><a href="#"><i class="bi bi-geo-alt me-1"></i> Nova Metrópole – SP</a></li>
+          <li><a href="#"><i class="bi bi-telephone me-1"></i> (11) 9 9999-0000</a></li>
+          <li><a href="#"><i class="bi bi-envelope me-1"></i> contato@iadnme.org.br</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container">© 2025 IADNME – Igreja Assembleia de Deus Nova Metrópole. | <a href="#">Política de Privacidade</a></div></div>
+</footer>
+
+<div class="modal fade" id="modalJesus" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow">
+      <div class="modal-header"><h5 class="modal-title fw-bold"><i class="bi bi-heart-fill me-2"></i> Quero Aceitar Jesus!</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body p-4">
+        <form id="formJesus">
+          <div class="mb-3"><label class="form-label fw-semibold">Nome *</label><input type="text" class="form-control" id="jesusNome" required /></div>
+          <div class="mb-3"><label class="form-label fw-semibold">WhatsApp</label><input type="tel" class="form-control" id="jesusPhone" /></div>
+          <div class="mb-4"><label class="form-label fw-semibold">E-mail</label><input type="email" class="form-control" id="jesusEmail" /></div>
+          <button type="submit" class="btn-laranja w-100 py-2"><i class="bi bi-heart me-2"></i> Quero Aceitar Jesus!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<button id="scrollTop" title="Voltar ao topo"><i class="bi bi-chevron-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
