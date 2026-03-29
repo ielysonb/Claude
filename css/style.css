@@ -186,6 +186,7 @@ img { max-width: 100%; }
 }
 .hero-slide-1 { background-color: var(--azul-escuro); }
 .hero-slide-2 { background-image: url('../img/banner-sede.JPG'); background-position: center center; }
+.hero-slide-2::before { display: none; }
 
 .hero-content {
   position: relative;
